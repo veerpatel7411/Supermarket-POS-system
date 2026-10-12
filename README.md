@@ -40,3 +40,4 @@ The first-run administrator password is chosen by the user; no universal default
 ## Scope and release status
 
 This is a tested functional release candidate/source deliverable, not a certified commercial accounting or fiscal-receipt product. The installer has been cross-built, but was not executed on a physical Windows/shop-network test bed in this workspace. Before live use, install it on the target Windows version, test wired/Wi-Fi discovery, printer drivers, failure/recovery and backup restore, set employee accounts, and validate VAT/fiscal receipt rules with a local accountant or tax authority. The app does not claim fiscal-device or KRA eTIMS integration.
+Download EXE file from https://drive.google.com/file/d/1HhEu984MnOkhRDgz2rlQRZY0R2Sn0D3N/view?usp=sharing
