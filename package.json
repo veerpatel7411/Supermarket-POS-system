@@ -1,0 +1,66 @@
+{
+  "name": "marketbridge-pos",
+  "version": "1.0.0",
+  "description": "Offline-first, local-network supermarket POS for Windows",
+  "main": "src/main.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron src/main.js",
+    "web:demo": "node src/web-server.js --demo",
+    "test": "node --test test/*.test.js",
+    "build:win": "electron-builder --win nsis --x64 --publish never",
+    "pack:win": "electron-builder --dir --win --x64 --publish never"
+  },
+  "dependencies": {
+    "selfsigned": "5.5.0",
+    "sql.js": "1.13.0"
+  },
+  "devDependencies": {
+    "electron": "44.6.0",
+    "electron-builder": "26.15.3"
+  },
+  "overrides": {
+    "@electron/get": "5.1.0"
+  },
+  "build": {
+    "appId": "com.marketbridge.pos",
+    "productName": "MarketBridge POS",
+    "asar": true,
+    "directories": {
+      "output": "deliverables"
+    },
+    "files": [
+      "src/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json",
+      "!test/**/*",
+      "!scripts/**/*"
+    ],
+    "extraMetadata": {
+      "main": "src/main.js"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/marketbridge.ico",
+      "artifactName": "MarketBridge-POS-Setup-${version}-${arch}.${ext}",
+      "requestedExecutionLevel": "requireAdministrator",
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MarketBridge POS",
+      "include": "scripts/installer.nsh",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
