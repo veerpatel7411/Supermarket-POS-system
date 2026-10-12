@@ -16,6 +16,7 @@ A Windows desktop POS built for a small supermarket LAN: one computer owns the c
 The Windows x64 NSIS installer has been built and is in `deliverables/MarketBridge-POS-Setup-1.0.0-x64.exe` (about 117 MB / 112 MiB). It includes Electron, the application and runtime libraries; the end user does **not** install Python, Node, Java, a database server, Docker, or development tools. The installer is per-machine and requests Windows administrator approval to install and add Private/LocalSubnet firewall rules.
 
 Developers can rebuild with Node.js 22.12+ and `npm install && npm run build:win`. Cross-building the Windows NSIS installer from Linux also uses Wine. This repository does not contain a production code-signing certificate. Windows SmartScreen may therefore show an “unrecognized publisher” warning until a trusted vendor certificate is used to sign the installer.
+Download the EXE file from https://drive.google.com/file/d/1HhEu984MnOkhRDgz2rlQRZY0R2Sn0D3N/view?usp=sharing
 
 ## First run
 
@@ -40,4 +41,4 @@ The first-run administrator password is chosen by the user; no universal default
 ## Scope and release status
 
 This is a tested functional release candidate/source deliverable, not a certified commercial accounting or fiscal-receipt product. The installer has been cross-built, but was not executed on a physical Windows/shop-network test bed in this workspace. Before live use, install it on the target Windows version, test wired/Wi-Fi discovery, printer drivers, failure/recovery and backup restore, set employee accounts, and validate VAT/fiscal receipt rules with a local accountant or tax authority. The app does not claim fiscal-device or KRA eTIMS integration.
-Download EXE file from https://drive.google.com/file/d/1HhEu984MnOkhRDgz2rlQRZY0R2Sn0D3N/view?usp=sharing
+
